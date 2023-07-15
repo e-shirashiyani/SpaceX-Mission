@@ -17,7 +17,7 @@
 		B8912BCF2A62AD3C00B4FF58 /* SpaceX_MissionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BCE2A62AD3C00B4FF58 /* SpaceX_MissionUITests.swift */; };
 		B8912BD12A62AD3C00B4FF58 /* SpaceX_MissionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BD02A62AD3C00B4FF58 /* SpaceX_MissionUITestsLaunchTests.swift */; };
 		B8912BE32A62B06600B4FF58 /* MissionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BE22A62B06600B4FF58 /* MissionEntity.swift */; };
-		B8912BE62A62BA5800B4FF58 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BE52A62BA5800B4FF58 /* ApiService.swift */; };
+		B8912BE62A62BA5800B4FF58 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BE52A62BA5800B4FF58 /* NetworkService.swift */; };
 		B8912BE92A62BA9D00B4FF58 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B8912BE82A62BA9D00B4FF58 /* RxCocoa */; };
 		B8912BEB2A62BA9D00B4FF58 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B8912BEA2A62BA9D00B4FF58 /* RxSwift */; };
 /* End PBXBuildFile section */
@@ -54,7 +54,7 @@
 		B8912BCE2A62AD3C00B4FF58 /* SpaceX_MissionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceX_MissionUITests.swift; sourceTree = "<group>"; };
 		B8912BD02A62AD3C00B4FF58 /* SpaceX_MissionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceX_MissionUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B8912BE22A62B06600B4FF58 /* MissionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionEntity.swift; sourceTree = "<group>"; };
-		B8912BE52A62BA5800B4FF58 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		B8912BE52A62BA5800B4FF58 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +107,7 @@
 		B8912BA92A62AD3A00B4FF58 /* SpaceX-Mission */ = {
 			isa = PBXGroup;
 			children = (
+				B8912BEC2A62BBF600B4FF58 /* Repository */,
 				B8912BE42A62BA4B00B4FF58 /* Network */,
 				B8912BDD2A62AD7600B4FF58 /* Models */,
 				B8912BAA2A62AD3A00B4FF58 /* AppDelegate.swift */,
@@ -148,9 +149,16 @@
 		B8912BE42A62BA4B00B4FF58 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				B8912BE52A62BA5800B4FF58 /* ApiService.swift */,
+				B8912BE52A62BA5800B4FF58 /* NetworkService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		B8912BEC2A62BBF600B4FF58 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,7 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8912BE32A62B06600B4FF58 /* MissionEntity.swift in Sources */,
-				B8912BE62A62BA5800B4FF58 /* ApiService.swift in Sources */,
+				B8912BE62A62BA5800B4FF58 /* NetworkService.swift in Sources */,
 				B8912BAF2A62AD3A00B4FF58 /* ViewController.swift in Sources */,
 				B8912BAB2A62AD3A00B4FF58 /* AppDelegate.swift in Sources */,
 				B8912BAD2A62AD3A00B4FF58 /* SceneDelegate.swift in Sources */,
