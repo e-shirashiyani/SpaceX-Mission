@@ -10,7 +10,7 @@ import Foundation
 struct Mission: Decodable {
     let missionName: String
     let flightNumber: Int
-    let launchDateUtc: Date
+    let launchDateUtc: String?
     let rocket: Rocket
     let links: Links
     
@@ -24,4 +24,26 @@ struct Links: Decodable {
     let missionPatchSmall: String?
     let articleLink: String?
     let videoLink: String?
+}
+extension Mission {
+    
+    var formattedLaunchDate: String? {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+            dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+            
+            guard let launchDateStr = launchDateUtc else {
+                return nil
+            }
+            
+            guard let launchDate = dateFormatter.date(from: launchDateStr) else {
+                return nil
+            }
+            
+            dateFormatter.dateFormat = "MMMM d, yyyy"
+            let formattedDate = dateFormatter.string(from: launchDate)
+            return formattedDate
+        }
+        
+    
 }

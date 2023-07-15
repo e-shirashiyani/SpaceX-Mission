@@ -25,6 +25,8 @@ class MissionListViewModel {
     init() {
         didSelectMission
             .subscribe(onNext: { [weak self] mission in
+//                let detailsViewModel = MissionDetailsViewModel(mission: mission)
+//                let detailsVC = MissionDetailsViewController(viewModel: detailsViewModel)
                 // Present details view controller
             })
             .disposed(by: disposeBag)
