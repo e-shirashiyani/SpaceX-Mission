@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E261" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Links" representedClassName="Links" syncable="YES" codeGenerationType="class">
+        <attribute name="articleLink" optional="YES" attributeType="String"/>
+        <attribute name="missionPatchSmall" optional="YES" attributeType="String"/>
+        <attribute name="videoLink" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="MissionEntity" representedClassName="" syncable="YES">
+        <attribute name="flightNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="launchDateUtc" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="links" optional="YES" attributeType="Transformable" customClassName="Links"/>
+        <attribute name="missionName" optional="YES" attributeType="String"/>
+        <attribute name="rocket" optional="YES" attributeType="Transformable" customClassName="Rocket"/>
+    </entity>
+    <entity name="Rocket" representedClassName="Rocket" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+    </entity>
 </model>

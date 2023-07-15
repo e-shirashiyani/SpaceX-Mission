@@ -11,12 +11,12 @@
 		B8912BAD2A62AD3A00B4FF58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BAC2A62AD3A00B4FF58 /* SceneDelegate.swift */; };
 		B8912BAF2A62AD3A00B4FF58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BAE2A62AD3A00B4FF58 /* ViewController.swift */; };
 		B8912BB22A62AD3A00B4FF58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8912BB02A62AD3A00B4FF58 /* Main.storyboard */; };
-		B8912BB52A62AD3A00B4FF58 /* SpaceX_Mission.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B8912BB32A62AD3A00B4FF58 /* SpaceX_Mission.xcdatamodeld */; };
 		B8912BB72A62AD3C00B4FF58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8912BB62A62AD3C00B4FF58 /* Assets.xcassets */; };
 		B8912BBA2A62AD3C00B4FF58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8912BB82A62AD3C00B4FF58 /* LaunchScreen.storyboard */; };
 		B8912BC52A62AD3C00B4FF58 /* SpaceX_MissionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BC42A62AD3C00B4FF58 /* SpaceX_MissionTests.swift */; };
 		B8912BCF2A62AD3C00B4FF58 /* SpaceX_MissionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BCE2A62AD3C00B4FF58 /* SpaceX_MissionUITests.swift */; };
 		B8912BD12A62AD3C00B4FF58 /* SpaceX_MissionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BD02A62AD3C00B4FF58 /* SpaceX_MissionUITestsLaunchTests.swift */; };
+		B8912BDF2A62AD8000B4FF58 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BDE2A62AD8000B4FF58 /* Mission.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +42,6 @@
 		B8912BAC2A62AD3A00B4FF58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B8912BAE2A62AD3A00B4FF58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B8912BB12A62AD3A00B4FF58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B8912BB42A62AD3A00B4FF58 /* SpaceX_Mission.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpaceX_Mission.xcdatamodel; sourceTree = "<group>"; };
 		B8912BB62A62AD3C00B4FF58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8912BB92A62AD3C00B4FF58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8912BBB2A62AD3C00B4FF58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +50,7 @@
 		B8912BCA2A62AD3C00B4FF58 /* SpaceX-MissionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SpaceX-MissionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8912BCE2A62AD3C00B4FF58 /* SpaceX_MissionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceX_MissionUITests.swift; sourceTree = "<group>"; };
 		B8912BD02A62AD3C00B4FF58 /* SpaceX_MissionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceX_MissionUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B8912BDE2A62AD8000B4FF58 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +101,7 @@
 		B8912BA92A62AD3A00B4FF58 /* SpaceX-Mission */ = {
 			isa = PBXGroup;
 			children = (
+				B8912BDD2A62AD7600B4FF58 /* Models */,
 				B8912BAA2A62AD3A00B4FF58 /* AppDelegate.swift */,
 				B8912BAC2A62AD3A00B4FF58 /* SceneDelegate.swift */,
 				B8912BAE2A62AD3A00B4FF58 /* ViewController.swift */,
@@ -108,7 +109,6 @@
 				B8912BB62A62AD3C00B4FF58 /* Assets.xcassets */,
 				B8912BB82A62AD3C00B4FF58 /* LaunchScreen.storyboard */,
 				B8912BBB2A62AD3C00B4FF58 /* Info.plist */,
-				B8912BB32A62AD3A00B4FF58 /* SpaceX_Mission.xcdatamodeld */,
 			);
 			path = "SpaceX-Mission";
 			sourceTree = "<group>";
@@ -128,6 +128,14 @@
 				B8912BD02A62AD3C00B4FF58 /* SpaceX_MissionUITestsLaunchTests.swift */,
 			);
 			path = "SpaceX-MissionUITests";
+			sourceTree = "<group>";
+		};
+		B8912BDD2A62AD7600B4FF58 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B8912BDE2A62AD8000B4FF58 /* Mission.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,9 +269,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8912BB52A62AD3A00B4FF58 /* SpaceX_Mission.xcdatamodeld in Sources */,
 				B8912BAF2A62AD3A00B4FF58 /* ViewController.swift in Sources */,
 				B8912BAB2A62AD3A00B4FF58 /* AppDelegate.swift in Sources */,
+				B8912BDF2A62AD8000B4FF58 /* Mission.swift in Sources */,
 				B8912BAD2A62AD3A00B4FF58 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -606,19 +614,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		B8912BB32A62AD3A00B4FF58 /* SpaceX_Mission.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				B8912BB42A62AD3A00B4FF58 /* SpaceX_Mission.xcdatamodel */,
-			);
-			currentVersion = B8912BB42A62AD3A00B4FF58 /* SpaceX_Mission.xcdatamodel */;
-			path = SpaceX_Mission.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = B8912B9F2A62AD3A00B4FF58 /* Project object */;
 }
