@@ -23,7 +23,7 @@ class MissionCell: UITableViewCell {
     }
     
     func configure(with mission: Mission) {
-        missionNameLabel.text = mission.missionName
+        missionNameLabel.text = mission.name
         missionDateLabel.text = mission.formattedLaunchDate
     }
     private func configureMissionNameLabel() {

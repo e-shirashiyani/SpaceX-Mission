@@ -8,16 +8,16 @@
 import Foundation
 
 struct Mission: Decodable {
-    let missionName: String
-    let flightNumber: Int
-    let launchDateUtc: String?
-    let rocket: Rocket
-    let links: Links
+    let name: String?
+    let flight_number: Int?
+    let date_utc: String?
+//    let rocket: Rocket?
+    let links: Links?
     
 }
 struct Rocket: Decodable {
-    let name: String
-    let type: String
+    let name: String?
+    let type: String?
 }
 
 struct Links: Decodable {
@@ -32,7 +32,7 @@ extension Mission {
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
             dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
             
-            guard let launchDateStr = launchDateUtc else {
+            guard let launchDateStr = date_utc else {
                 return nil
             }
             

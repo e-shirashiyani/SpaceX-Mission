@@ -11,7 +11,7 @@ import RxCocoa
 
 class MissionListViewModel {
     
-    private let networkService = NetworkService()
+//    private let networkService = NetworkService()
     private let disposeBag = DisposeBag()
     
     // Inputs

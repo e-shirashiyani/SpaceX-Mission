@@ -10,11 +10,21 @@ import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Get a reference to the root navigation controller
+        guard let navigationController = window?.rootViewController as? UINavigationController else {
+            return true
+        }
+        // Create an instance of MissionListViewController
+        let missionListViewController = MissionListViewController()
+        
+        // Push the missionListViewController onto the navigation stack
+        navigationController.pushViewController(missionListViewController, animated: true)
+        
         return true
     }
 

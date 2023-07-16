@@ -24,6 +24,8 @@
 		B8912BF22A62F8D900B4FF58 /* MissionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BF12A62F8D900B4FF58 /* MissionListViewController.swift */; };
 		B8912BF62A62FA1600B4FF58 /* MissionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BF52A62FA1600B4FF58 /* MissionCell.swift */; };
 		B8912BF82A6303FE00B4FF58 /* MissionListViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BF72A6303FE00B4FF58 /* MissionListViewController+Ext.swift */; };
+		B8912BFD2A63AEB200B4FF58 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BFC2A63AEB200B4FF58 /* NetworkManager.swift */; };
+		B8912C002A63B56900B4FF58 /* MissionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BFF2A63B56900B4FF58 /* MissionRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		B8912BF12A62F8D900B4FF58 /* MissionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListViewController.swift; sourceTree = "<group>"; };
 		B8912BF52A62FA1600B4FF58 /* MissionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCell.swift; sourceTree = "<group>"; };
 		B8912BF72A6303FE00B4FF58 /* MissionListViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MissionListViewController+Ext.swift"; sourceTree = "<group>"; };
+		B8912BFC2A63AEB200B4FF58 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		B8912BFF2A63B56900B4FF58 /* MissionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 		B8912BA92A62AD3A00B4FF58 /* SpaceX-Mission */ = {
 			isa = PBXGroup;
 			children = (
+				B8912BFE2A63B55E00B4FF58 /* Repository */,
 				B8912BF42A62FA0600B4FF58 /* Component */,
 				B8912BF32A62F8DC00B4FF58 /* Controller */,
 				B8912BEC2A62BBF600B4FF58 /* ViewModel */,
@@ -160,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				B8912BE52A62BA5800B4FF58 /* NetworkService.swift */,
+				B8912BFC2A63AEB200B4FF58 /* NetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -187,6 +193,14 @@
 				B8912BF52A62FA1600B4FF58 /* MissionCell.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		B8912BFE2A63B55E00B4FF58 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				B8912BFF2A63B56900B4FF58 /* MissionRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +347,8 @@
 				B8912BF02A62F16000B4FF58 /* MissionListViewModel.swift in Sources */,
 				B8912BE62A62BA5800B4FF58 /* NetworkService.swift in Sources */,
 				B8912BAF2A62AD3A00B4FF58 /* ViewController.swift in Sources */,
+				B8912C002A63B56900B4FF58 /* MissionRepository.swift in Sources */,
+				B8912BFD2A63AEB200B4FF58 /* NetworkManager.swift in Sources */,
 				B8912BAB2A62AD3A00B4FF58 /* AppDelegate.swift in Sources */,
 				B8912BF62A62FA1600B4FF58 /* MissionCell.swift in Sources */,
 				B8912BAD2A62AD3A00B4FF58 /* SceneDelegate.swift in Sources */,

@@ -11,7 +11,7 @@ import RxCocoa
 
 class MissionListViewController: UIViewController {
     
-    private let networkService = NetworkService()
+    private let networkService = APIService()
     private let disposeBag = DisposeBag()
     internal var missions: [Mission] = []
     
@@ -27,24 +27,7 @@ class MissionListViewController: UIViewController {
         super.viewDidLoad()
         title = "Missions"
         view.backgroundColor = .white
-        fetchData()
         configureMissionTableView()
-    }
-    private func fetchData() {
-        networkService.fetchMissions(upcoming: true)
-            .observe(on: MainScheduler.instance) // observe on the main thread
-            .subscribe(onSuccess: { [weak self] result in
-                switch result {
-                case .success(let missions):
-                    self?.missions = missions
-                    self?.tableView.reloadData()
-                case .failure(let error):
-                    self?.showErrorAlert(with: error.localizedDescription)
-                }
-            }, onFailure: { [weak self] error in
-                self?.showErrorAlert(with: error.localizedDescription)
-            })
-            .disposed(by: disposeBag)
     }
     private func configureMissionTableView() {
         view.addSubview(tableView)
