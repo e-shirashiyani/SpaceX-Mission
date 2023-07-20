@@ -11,9 +11,9 @@
 		B802B2E42A6842C000B3B4E6 /* FetchMissionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B802B2E32A6842C000B3B4E6 /* FetchMissionsUseCase.swift */; };
 		B802B2E72A68430800B3B4E6 /* MissionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B802B2E62A68430800B3B4E6 /* MissionsPresenter.swift */; };
 		B802B2EA2A6925D600B3B4E6 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B802B2E92A6925D600B3B4E6 /* ImageLoader.swift */; };
+		B802B2EC2A692D3600B3B4E6 /* DateTimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B802B2EB2A692D3600B3B4E6 /* DateTimeConverter.swift */; };
 		B8912BAB2A62AD3A00B4FF58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BAA2A62AD3A00B4FF58 /* AppDelegate.swift */; };
 		B8912BAD2A62AD3A00B4FF58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BAC2A62AD3A00B4FF58 /* SceneDelegate.swift */; };
-		B8912BAF2A62AD3A00B4FF58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BAE2A62AD3A00B4FF58 /* ViewController.swift */; };
 		B8912BB72A62AD3C00B4FF58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8912BB62A62AD3C00B4FF58 /* Assets.xcassets */; };
 		B8912BBA2A62AD3C00B4FF58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8912BB82A62AD3C00B4FF58 /* LaunchScreen.storyboard */; };
 		B8912BC52A62AD3C00B4FF58 /* SpaceX_MissionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BC42A62AD3C00B4FF58 /* SpaceX_MissionTests.swift */; };
@@ -51,10 +51,10 @@
 		B802B2E32A6842C000B3B4E6 /* FetchMissionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMissionsUseCase.swift; sourceTree = "<group>"; };
 		B802B2E62A68430800B3B4E6 /* MissionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsPresenter.swift; sourceTree = "<group>"; };
 		B802B2E92A6925D600B3B4E6 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		B802B2EB2A692D3600B3B4E6 /* DateTimeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeConverter.swift; sourceTree = "<group>"; };
 		B8912BA72A62AD3A00B4FF58 /* SpaceX-Mission.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SpaceX-Mission.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8912BAA2A62AD3A00B4FF58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8912BAC2A62AD3A00B4FF58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B8912BAE2A62AD3A00B4FF58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B8912BB62A62AD3C00B4FF58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8912BB92A62AD3C00B4FF58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8912BBB2A62AD3C00B4FF58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -126,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				B802B2E92A6925D600B3B4E6 /* ImageLoader.swift */,
+				B802B2EB2A692D3600B3B4E6 /* DateTimeConverter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -164,7 +165,6 @@
 				B8912BDD2A62AD7600B4FF58 /* Models */,
 				B8912BAA2A62AD3A00B4FF58 /* AppDelegate.swift */,
 				B8912BAC2A62AD3A00B4FF58 /* SceneDelegate.swift */,
-				B8912BAE2A62AD3A00B4FF58 /* ViewController.swift */,
 				B8912BB62A62AD3C00B4FF58 /* Assets.xcassets */,
 				B8912BB82A62AD3C00B4FF58 /* LaunchScreen.storyboard */,
 				B8912BBB2A62AD3C00B4FF58 /* Info.plist */,
@@ -371,9 +371,9 @@
 				B8912BF82A6303FE00B4FF58 /* MissionListViewController+Ext.swift in Sources */,
 				B8912BE32A62B06600B4FF58 /* MissionEntity.swift in Sources */,
 				B8912BE62A62BA5800B4FF58 /* SpaceXAPIClient.swift in Sources */,
-				B8912BAF2A62AD3A00B4FF58 /* ViewController.swift in Sources */,
 				B8912C002A63B56900B4FF58 /* MissionRepository.swift in Sources */,
 				B802B2E72A68430800B3B4E6 /* MissionsPresenter.swift in Sources */,
+				B802B2EC2A692D3600B3B4E6 /* DateTimeConverter.swift in Sources */,
 				B802B2E12A68424000B3B4E6 /* MissionDataSource.swift in Sources */,
 				B8912BAB2A62AD3A00B4FF58 /* AppDelegate.swift in Sources */,
 				B802B2E42A6842C000B3B4E6 /* FetchMissionsUseCase.swift in Sources */,

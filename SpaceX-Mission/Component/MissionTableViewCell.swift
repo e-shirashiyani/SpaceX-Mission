@@ -45,7 +45,6 @@ class MissionTableViewCell: UITableViewCell {
     }
     
     private func setupUI() {
-        // Add subviews and constraints programmatically
         contentView.addSubview(missionIconImageView)
         contentView.addSubview(titleLabel)
         contentView.addSubview(statusLabel)
@@ -57,7 +56,6 @@ class MissionTableViewCell: UITableViewCell {
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            // Add constraints to position the subviews as desired
             missionIconImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             missionIconImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             missionIconImageView.widthAnchor.constraint(equalToConstant: 50),
@@ -79,13 +77,24 @@ class MissionTableViewCell: UITableViewCell {
     }
     
     func configure(with mission: Mission) {
-        // Configure the cell's UI elements with mission details
         titleLabel.text = "Flight Number: \(mission.flight_number ?? 0)"
         statusLabel.text = mission.success ?? false ? "Success" : "Failure"
-        dateLabel.text = mission.date_utc
-        let url = URL(string: mission.links?.patch?.small ?? "")!
+        dateLabel.text = loadLocalTime(utc: mission.date_utc ?? "")
+        loadImage(url: URL(string: mission.links?.patch?.small ?? "")!)
+    }
+    
+    private func loadLocalTime(utc: String) -> String {
+        var result : String?
+        if let localTime = DateTimeConverter.convertUTCToLocal(dateString: utc) {
+            result = "Local Time: \(localTime)"
+        } else {
+            result = "Date: N/A"
+        }
+        return result ?? ""
+    }
+    
+    private func loadImage(url: URL) {
         ImageLoader.shared.loadImage(from: url) { image in
-            // Use your image here
             DispatchQueue.main.async {
                 self.missionIconImageView.image = image
             }
