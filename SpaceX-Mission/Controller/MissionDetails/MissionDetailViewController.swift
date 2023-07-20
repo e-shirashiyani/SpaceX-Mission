@@ -13,6 +13,18 @@ import UIKit
 class MissionDetailViewController: UIViewController {
     var mission: Mission?
     
+    private var isMissionBookmarked: Bool {
+        get {
+            guard let mission = mission else { return false }
+            return MissionUserDefaultsManager.isMissionBookmarked(mission)
+        }
+        set {
+            guard let mission = mission else { return }
+            MissionUserDefaultsManager.saveBookmarkStatus(for: mission, isBookmarked: newValue)
+            updateBookmarkButtonAppearance()
+        }
+    }
+    
     private let missionImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -53,15 +65,27 @@ class MissionDetailViewController: UIViewController {
     private let bookmarkButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "bookmark"), for: .normal)
-        button.addTarget(MissionDetailViewController.self, action: #selector(bookmarkButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(bookmarkButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    @objc private func openWikipedia() {
+        guard let mission = mission, !(mission.links?.wikipedia?.isEmpty ?? true), let url = URL(string: mission.links?.wikipedia ?? "") else {
+            return
+        }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    
+    @objc private func bookmarkButtonTapped() {
+        isMissionBookmarked.toggle()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         displayMissionDetails()
+        updateBookmarkButtonAppearance()
     }
     
     private func setupUI() {
@@ -108,35 +132,26 @@ class MissionDetailViewController: UIViewController {
         guard let mission = mission else {
             return
         }
-        
-        // Update UI elements with mission details
-//        missionImageView.image = UIImage(named: mission.imageName)
         loadImage(url: URL(string: mission.links?.patch?.large ?? "") ?? URL(fileURLWithPath: ""))
         descriptionLabel.text = mission.details
         missionNameLabel.text = mission.name
         completionDateLabel.text = "Completion Date: \(loadLocalTime(utc: mission.date_utc ?? ""))"
-        
         if mission.links?.wikipedia?.isEmpty ?? true {
             wikipediaButton.isHidden = true
         }
     }
-    
-    @objc private func openWikipedia() {
-        guard let mission = mission, !(mission.links?.wikipedia?.isEmpty ?? true), let url = URL(string: mission.links?.wikipedia ?? "") else {
-            return
+    private func updateBookmarkButtonAppearance() {
+            if isMissionBookmarked {
+                bookmarkButton.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
+            } else {
+                bookmarkButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
+            }
         }
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-    }
     
-    @objc private func bookmarkButtonTapped() {
-        // Implement bookmark feature here (e.g., save mission to bookmarks or remove from bookmarks)
-        // You can use UserDefaults, Core Data, or any other data storage mechanism to manage bookmarks
-        // Update bookmarkButton appearance based on bookmark status
-    }
     private func loadLocalTime(utc: String) -> String {
         var result : String?
         if let localTime = DateTimeConverter.convertUTCToLocal(dateString: utc) {
-            result = "Local Time: \(localTime)"
+            result = " \(localTime)"
         } else {
             result = "Date: N/A"
         }
@@ -150,4 +165,5 @@ class MissionDetailViewController: UIViewController {
             }
         }
     }
+    
 }
