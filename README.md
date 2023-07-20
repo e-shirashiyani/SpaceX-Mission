@@ -1,6 +1,6 @@
 # SpaceX Missions Showcase App
 
-![App Icon](https://github.com/YourUsername/YourRepoName/raw/main/AppIcon.png)
+![App Icon](https://github.com/YourUsername/YourRepoName/raw/main/1024.png)
 
 ## Overview
 
