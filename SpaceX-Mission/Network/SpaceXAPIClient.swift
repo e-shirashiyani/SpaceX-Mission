@@ -9,12 +9,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-// NetworkService.swift (Data Layer)
-// MissionRepository.swift (Repository)
-protocol MissionRepository {
-    func getMissions(page: Int, completion: @escaping (Result<[Mission], Error>) -> Void)
-}
-
 // SpaceXAPIClient.swift (API Client)
     class SpaceXAPIClient {
         private let baseURL = "https://api.spacexdata.com/v5/launches"

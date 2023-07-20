@@ -10,16 +10,16 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    private let apiClient = SpaceXAPIClient()
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
 
-        let apiClient = SpaceXAPIClient()
         let missionRepository = SpaceXMissionRepository(apiClient: apiClient)
-        let getMissionsUseCase = GetMissionsUseCaseImpl(repository: missionRepository)
-        let missionListViewController = MissionListViewController(getMissionsUseCase: getMissionsUseCase)
+        let getMissionsUseCase = GetMissionsInteractor(missionRepository: missionRepository)
+        let missionListViewController = MissionListViewController(getMissionsUseCase: getMissionsUseCase, missionRepository: missionRepository)
         // Set up the navigation controller
 //        let navigationController = UINavigationController(rootViewController: missionListViewController)
         window?.rootViewController = missionListViewController

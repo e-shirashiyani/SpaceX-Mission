@@ -139,6 +139,8 @@
 		B802B2ED2A69699800B3B4E6 /* MissionList */ = {
 			isa = PBXGroup;
 			children = (
+				B8912BF12A62F8D900B4FF58 /* MissionListViewController.swift */,
+				B8912BF72A6303FE00B4FF58 /* MissionListViewController+Ext.swift */,
 			);
 			path = MissionList;
 			sourceTree = "<group>";
@@ -230,8 +232,6 @@
 			children = (
 				B802B2EE2A69699D00B3B4E6 /* MissionDetails */,
 				B802B2ED2A69699800B3B4E6 /* MissionList */,
-				B8912BF12A62F8D900B4FF58 /* MissionListViewController.swift */,
-				B8912BF72A6303FE00B4FF58 /* MissionListViewController+Ext.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

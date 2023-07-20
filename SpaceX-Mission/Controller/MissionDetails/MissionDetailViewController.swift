@@ -12,19 +12,16 @@ import UIKit
 
 class MissionDetailViewController: UIViewController {
     var mission: Mission?
+    private let bookmarkMissionUseCase: BookmarkMissionUseCase
     
-    private var isMissionBookmarked: Bool {
-        get {
-            guard let mission = mission else { return false }
-            return MissionUserDefaultsManager.isMissionBookmarked(mission)
+    init(bookmarkMissionUseCase: BookmarkMissionUseCase) {
+            self.bookmarkMissionUseCase = bookmarkMissionUseCase
+            super.init(nibName: nil, bundle: nil)
         }
-        set {
-            guard let mission = mission else { return }
-            MissionUserDefaultsManager.saveBookmarkStatus(for: mission, isBookmarked: newValue)
-            updateBookmarkButtonAppearance()
-        }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    
     private let missionImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -78,7 +75,13 @@ class MissionDetailViewController: UIViewController {
     }
     
     @objc private func bookmarkButtonTapped() {
-        isMissionBookmarked.toggle()
+        guard let mission = mission else { return }
+            if MissionUserDefaultsManager.isMissionBookmarked(mission) {
+                bookmarkMissionUseCase.unbookmarkMission(mission)
+            } else {
+                bookmarkMissionUseCase.bookmarkMission(mission)
+            }
+        updateBookmarkButtonAppearance()
     }
     
     override func viewDidLoad() {
@@ -141,12 +144,13 @@ class MissionDetailViewController: UIViewController {
         }
     }
     private func updateBookmarkButtonAppearance() {
-            if isMissionBookmarked {
-                bookmarkButton.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
-            } else {
-                bookmarkButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
-            }
-        }
+       // Update the bookmark button appearance based on the bookmark status
+        guard let mission = mission else { return }
+               let isBookmarked = MissionUserDefaultsManager.isMissionBookmarked(mission)
+
+               let bookmarkButtonImage = isBookmarked ? UIImage(systemName: "bookmark.fill") : UIImage(systemName: "bookmark")
+               bookmarkButton.setImage(bookmarkButtonImage, for: .normal)
+    }
     
     private func loadLocalTime(utc: String) -> String {
         var result : String?

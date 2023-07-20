@@ -6,18 +6,38 @@
 //
 import Foundation
 
+// GetMissionsUseCase.swift (Domain Layer)
 protocol GetMissionsUseCase {
-    func execute(page: Int, completion: @escaping (Result<[Mission], Error>) -> Void)
+    func execute(page: Int,completion: @escaping (Result<[Mission], Error>) -> Void)
 }
 
-class GetMissionsUseCaseImpl: GetMissionsUseCase {
-    private let repository: MissionRepository
-    
-    init(repository: MissionRepository) {
-        self.repository = repository
+class GetMissionsInteractor: GetMissionsUseCase {
+    private let missionRepository: MissionRepository
+
+    init(missionRepository: MissionRepository) {
+        self.missionRepository = missionRepository
+    }
+
+    func execute(page: Int,completion: @escaping (Result<[Mission], Error>) -> Void) {
+        missionRepository.getMissions(page: page, completion: completion)
+    }
+}
+
+// BookmarkMissionUseCase.swift (Domain Layer)
+protocol BookmarkMissionUseCase {
+    func bookmarkMission(_ mission: Mission)
+    func unbookmarkMission(_ mission: Mission)
+}
+
+class BookmarkMissionInteractor: BookmarkMissionUseCase {
+    func bookmarkMission(_ mission: Mission) {
+        // Save the bookmark status using MissionUserDefaultsManager
+        MissionUserDefaultsManager.saveBookmarkStatus(for: mission, isBookmarked: true)
     }
     
-    func execute(page: Int, completion: @escaping (Result<[Mission], Error>) -> Void) {
-        repository.getMissions(page: page, completion: completion)
+    func unbookmarkMission(_ mission: Mission) {
+        // Save the unbookmark status using MissionUserDefaultsManager
+        MissionUserDefaultsManager.saveBookmarkStatus(for: mission, isBookmarked: false)
+
     }
 }

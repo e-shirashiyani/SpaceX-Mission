@@ -16,6 +16,7 @@ class MissionListViewController: UIViewController {
     internal var missions: [Mission] = []
     internal var currentPage = 1
     private let getMissionsUseCase: GetMissionsUseCase
+    private let missionRepository: MissionRepository
     private var isLoading = false
     
     private lazy var tableView: UITableView = {
@@ -38,8 +39,9 @@ class MissionListViewController: UIViewController {
             activityIndicator.hidesWhenStopped = true
             return activityIndicator
         }()
-    init(getMissionsUseCase: GetMissionsUseCase) {
+    init(getMissionsUseCase: GetMissionsUseCase, missionRepository: MissionRepository) {
         self.getMissionsUseCase = getMissionsUseCase
+        self.missionRepository = missionRepository
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -54,7 +56,8 @@ class MissionListViewController: UIViewController {
     }
     
     func didSelectMission(_ mission: Mission) {
-        let detailVC = MissionDetailViewController()
+        let bookmarkMissionUseCase = BookmarkMissionInteractor()
+        let detailVC = MissionDetailViewController(bookmarkMissionUseCase: bookmarkMissionUseCase)
         detailVC.mission = mission
         present(detailVC, animated: true)
 //        navigationController?.pushViewController(detailVC, animated: true)

@@ -52,5 +52,258 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3A0F0093-1A1B-4374-91A5-20070B8173AB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpaceX-Mission/Controller/MissionDetails/MissionDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "bookmarkButtonTapped()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "140756E3-4E4E-48C0-8C95-732C74666885"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpaceX-Mission/Controller/MissionDetails/MissionDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "bookmarkButtonTapped()"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "140756E3-4E4E-48C0-8C95-732C74666885 - 1d09ab4157a54899"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpaceX_Mission.MissionDetailViewController.openWikipedia() -&gt; ()"
+                  moduleName = "SpaceX-Mission"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/e.shirashiyani/Desktop/SpaceX-Mission/SpaceX-Mission/Controller/MissionDetails/MissionDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  uuid = "140756E3-4E4E-48C0-8C95-732C74666885 - 4b06d373195b86f5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpaceX_Mission.MissionDetailViewController.bookmarkButtonTapped() -&gt; ()"
+                  moduleName = "SpaceX-Mission"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/e.shirashiyani/Desktop/SpaceX-Mission/SpaceX-Mission/Controller/MissionDetails/MissionDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "232">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C11D0F41-E6C1-4695-A74E-722B54AC90F1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpaceX-Mission/Controller/MissionDetails/MissionDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "updateBookmarkButtonAppearance()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C11D0F41-E6C1-4695-A74E-722B54AC90F1 - 24446be067be4af6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpaceX_Mission.MissionDetailViewController.updateBookmarkButtonAppearance() -&gt; ()"
+                  moduleName = "SpaceX-Mission"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/e.shirashiyani/Desktop/SpaceX-Mission/SpaceX-Mission/Controller/MissionDetails/MissionDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "C11D0F41-E6C1-4695-A74E-722B54AC90F1 - 24446be067be4af6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpaceX_Mission.MissionDetailViewController.updateBookmarkButtonAppearance() -&gt; ()"
+                  moduleName = "SpaceX-Mission"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/e.shirashiyani/Desktop/SpaceX-Mission/SpaceX-Mission/Controller/MissionDetails/MissionDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  uuid = "C11D0F41-E6C1-4695-A74E-722B54AC90F1 - 24446be067be4ac9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpaceX_Mission.MissionDetailViewController.updateBookmarkButtonAppearance() -&gt; ()"
+                  moduleName = "SpaceX-Mission"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/e.shirashiyani/Desktop/SpaceX-Mission/SpaceX-Mission/Controller/MissionDetails/MissionDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F6AE6F83-A886-4F8C-B2AE-1E0F1ED101CA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpaceX-Mission/Controller/MissionDetails/MissionDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "updateBookmarkButtonAppearance()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F6AE6F83-A886-4F8C-B2AE-1E0F1ED101CA - 24446be067be4ac9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpaceX_Mission.MissionDetailViewController.updateBookmarkButtonAppearance() -&gt; ()"
+                  moduleName = "SpaceX-Mission"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/e.shirashiyani/Desktop/SpaceX-Mission/SpaceX-Mission/Controller/MissionDetails/MissionDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "F6AE6F83-A886-4F8C-B2AE-1E0F1ED101CA - 24446be067be4ac9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpaceX_Mission.MissionDetailViewController.updateBookmarkButtonAppearance() -&gt; ()"
+                  moduleName = "SpaceX-Mission"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/e.shirashiyani/Desktop/SpaceX-Mission/SpaceX-Mission/Controller/MissionDetails/MissionDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "F6AE6F83-A886-4F8C-B2AE-1E0F1ED101CA - 24446be067be4ac9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpaceX_Mission.MissionDetailViewController.updateBookmarkButtonAppearance() -&gt; ()"
+                  moduleName = "SpaceX-Mission"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/e.shirashiyani/Desktop/SpaceX-Mission/SpaceX-Mission/Controller/MissionDetails/MissionDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "128">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "64F03DCB-6ACD-434F-99A2-10103DA91636"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpaceX-Mission/Controller/MissionDetails/MissionDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "bookmarkButtonTapped()"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "64F03DCB-6ACD-434F-99A2-10103DA91636 - d49200a88391a2a2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; __C.UIButton in variable initialization expression of SpaceX_Mission.MissionDetailViewController.bookmarkButton : __C.UIButton"
+                  moduleName = "SpaceX-Mission"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/e.shirashiyani/Desktop/SpaceX-Mission/SpaceX-Mission/Controller/MissionDetails/MissionDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "344">
+               </Location>
+               <Location
+                  uuid = "64F03DCB-6ACD-434F-99A2-10103DA91636 - 4b06d373195b8652"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpaceX_Mission.MissionDetailViewController.bookmarkButtonTapped() -&gt; ()"
+                  moduleName = "SpaceX-Mission"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/e.shirashiyani/Desktop/SpaceX-Mission/SpaceX-Mission/Controller/MissionDetails/MissionDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "64F03DCB-6ACD-434F-99A2-10103DA91636 - 4b06d373195b8652"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpaceX_Mission.MissionDetailViewController.bookmarkButtonTapped() -&gt; ()"
+                  moduleName = "SpaceX-Mission"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/e.shirashiyani/Desktop/SpaceX-Mission/SpaceX-Mission/Controller/MissionDetails/MissionDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "120">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
