@@ -12,6 +12,8 @@
 		B802B2E72A68430800B3B4E6 /* MissionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B802B2E62A68430800B3B4E6 /* MissionsPresenter.swift */; };
 		B802B2EA2A6925D600B3B4E6 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B802B2E92A6925D600B3B4E6 /* ImageLoader.swift */; };
 		B802B2EC2A692D3600B3B4E6 /* DateTimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B802B2EB2A692D3600B3B4E6 /* DateTimeConverter.swift */; };
+		B802B2F02A6969DF00B3B4E6 /* MissionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B802B2EF2A6969DF00B3B4E6 /* MissionDetailViewController.swift */; };
+		B802B2F22A69779E00B3B4E6 /* MissionUserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B802B2F12A69779E00B3B4E6 /* MissionUserDefaultsManager.swift */; };
 		B8912BAB2A62AD3A00B4FF58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BAA2A62AD3A00B4FF58 /* AppDelegate.swift */; };
 		B8912BAD2A62AD3A00B4FF58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BAC2A62AD3A00B4FF58 /* SceneDelegate.swift */; };
 		B8912BB72A62AD3C00B4FF58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8912BB62A62AD3C00B4FF58 /* Assets.xcassets */; };
@@ -52,6 +54,8 @@
 		B802B2E62A68430800B3B4E6 /* MissionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsPresenter.swift; sourceTree = "<group>"; };
 		B802B2E92A6925D600B3B4E6 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		B802B2EB2A692D3600B3B4E6 /* DateTimeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeConverter.swift; sourceTree = "<group>"; };
+		B802B2EF2A6969DF00B3B4E6 /* MissionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailViewController.swift; sourceTree = "<group>"; };
+		B802B2F12A69779E00B3B4E6 /* MissionUserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionUserDefaultsManager.swift; sourceTree = "<group>"; };
 		B8912BA72A62AD3A00B4FF58 /* SpaceX-Mission.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SpaceX-Mission.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8912BAA2A62AD3A00B4FF58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8912BAC2A62AD3A00B4FF58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,8 +131,24 @@
 			children = (
 				B802B2E92A6925D600B3B4E6 /* ImageLoader.swift */,
 				B802B2EB2A692D3600B3B4E6 /* DateTimeConverter.swift */,
+				B802B2F12A69779E00B3B4E6 /* MissionUserDefaultsManager.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		B802B2ED2A69699800B3B4E6 /* MissionList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MissionList;
+			sourceTree = "<group>";
+		};
+		B802B2EE2A69699D00B3B4E6 /* MissionDetails */ = {
+			isa = PBXGroup;
+			children = (
+				B802B2EF2A6969DF00B3B4E6 /* MissionDetailViewController.swift */,
+			);
+			path = MissionDetails;
 			sourceTree = "<group>";
 		};
 		B8912B9E2A62AD3A00B4FF58 = {
@@ -208,6 +228,8 @@
 		B8912BF32A62F8DC00B4FF58 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B802B2EE2A69699D00B3B4E6 /* MissionDetails */,
+				B802B2ED2A69699800B3B4E6 /* MissionList */,
 				B8912BF12A62F8D900B4FF58 /* MissionListViewController.swift */,
 				B8912BF72A6303FE00B4FF58 /* MissionListViewController+Ext.swift */,
 			);
@@ -376,9 +398,11 @@
 				B802B2EC2A692D3600B3B4E6 /* DateTimeConverter.swift in Sources */,
 				B802B2E12A68424000B3B4E6 /* MissionDataSource.swift in Sources */,
 				B8912BAB2A62AD3A00B4FF58 /* AppDelegate.swift in Sources */,
+				B802B2F22A69779E00B3B4E6 /* MissionUserDefaultsManager.swift in Sources */,
 				B802B2E42A6842C000B3B4E6 /* FetchMissionsUseCase.swift in Sources */,
 				B8912BF62A62FA1600B4FF58 /* MissionTableViewCell.swift in Sources */,
 				B8912BAD2A62AD3A00B4FF58 /* SceneDelegate.swift in Sources */,
+				B802B2F02A6969DF00B3B4E6 /* MissionDetailViewController.swift in Sources */,
 				B802B2EA2A6925D600B3B4E6 /* ImageLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,8 +13,8 @@ import UIKit
 import UIKit
 
 class MissionListViewController: UIViewController {
-    private var missions: [Mission] = []
-    private var currentPage = 1
+    internal var missions: [Mission] = []
+    internal var currentPage = 1
     private let getMissionsUseCase: GetMissionsUseCase
     private var isLoading = false
     
@@ -53,6 +53,13 @@ class MissionListViewController: UIViewController {
         fetchMissions()
     }
     
+    func didSelectMission(_ mission: Mission) {
+        let detailVC = MissionDetailViewController()
+        detailVC.mission = mission
+        present(detailVC, animated: true)
+//        navigationController?.pushViewController(detailVC, animated: true)
+
+    }
     private func setupUI() {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -112,26 +119,6 @@ class MissionListViewController: UIViewController {
         tableView.reloadData()
 //        fetchMissions()
     }
-}
-
-extension MissionListViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // Display only the missions for the current page
-        return currentPage * 20
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MissionCell", for: indexPath) as! MissionTableViewCell
-        // Calculate the index for the current page
-        if missions.count > 0 {
-            let index = (currentPage - 1) * 20 + indexPath.row
-            let mission = missions[index]
-            cell.configure(with: mission)
-        }
-        return cell
-    }
 }
 
-extension MissionListViewController: UITableViewDelegate {
-    // Implement the table view delegate methods, including the pagination logic, if required.
-}
