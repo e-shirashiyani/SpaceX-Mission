@@ -14,6 +14,8 @@
 		B802B2EC2A692D3600B3B4E6 /* DateTimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B802B2EB2A692D3600B3B4E6 /* DateTimeConverter.swift */; };
 		B802B2F02A6969DF00B3B4E6 /* MissionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B802B2EF2A6969DF00B3B4E6 /* MissionDetailViewController.swift */; };
 		B802B2F22A69779E00B3B4E6 /* MissionUserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B802B2F12A69779E00B3B4E6 /* MissionUserDefaultsManager.swift */; };
+		B802B2F62A698F1C00B3B4E6 /* MissionListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B802B2F52A698F1C00B3B4E6 /* MissionListViewControllerTests.swift */; };
+		B802B2F82A698F7B00B3B4E6 /* MissionDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B802B2F72A698F7B00B3B4E6 /* MissionDetailViewControllerTests.swift */; };
 		B8912BAB2A62AD3A00B4FF58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BAA2A62AD3A00B4FF58 /* AppDelegate.swift */; };
 		B8912BAD2A62AD3A00B4FF58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8912BAC2A62AD3A00B4FF58 /* SceneDelegate.swift */; };
 		B8912BB72A62AD3C00B4FF58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8912BB62A62AD3C00B4FF58 /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 		B802B2EB2A692D3600B3B4E6 /* DateTimeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeConverter.swift; sourceTree = "<group>"; };
 		B802B2EF2A6969DF00B3B4E6 /* MissionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailViewController.swift; sourceTree = "<group>"; };
 		B802B2F12A69779E00B3B4E6 /* MissionUserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionUserDefaultsManager.swift; sourceTree = "<group>"; };
+		B802B2F52A698F1C00B3B4E6 /* MissionListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListViewControllerTests.swift; sourceTree = "<group>"; };
+		B802B2F72A698F7B00B3B4E6 /* MissionDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		B8912BA72A62AD3A00B4FF58 /* SpaceX-Mission.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SpaceX-Mission.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8912BAA2A62AD3A00B4FF58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8912BAC2A62AD3A00B4FF58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -198,6 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				B8912BC42A62AD3C00B4FF58 /* SpaceX_MissionTests.swift */,
+				B802B2F52A698F1C00B3B4E6 /* MissionListViewControllerTests.swift */,
+				B802B2F72A698F7B00B3B4E6 /* MissionDetailViewControllerTests.swift */,
 			);
 			path = "SpaceX-MissionTests";
 			sourceTree = "<group>";
@@ -411,7 +417,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B802B2F82A698F7B00B3B4E6 /* MissionDetailViewControllerTests.swift in Sources */,
 				B8912BC52A62AD3C00B4FF58 /* SpaceX_MissionTests.swift in Sources */,
+				B802B2F62A698F1C00B3B4E6 /* MissionListViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

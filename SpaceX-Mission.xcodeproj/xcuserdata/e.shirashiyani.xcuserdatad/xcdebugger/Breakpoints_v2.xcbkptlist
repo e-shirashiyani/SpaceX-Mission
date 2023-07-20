@@ -65,7 +65,7 @@
             startingLineNumber = "79"
             endingLineNumber = "79"
             landmarkName = "bookmarkButtonTapped()"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -81,7 +81,7 @@
             startingLineNumber = "81"
             endingLineNumber = "81"
             landmarkName = "bookmarkButtonTapped()"
-            landmarkType = "9">
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "140756E3-4E4E-48C0-8C95-732C74666885 - 1d09ab4157a54899"
@@ -126,8 +126,8 @@
             filePath = "SpaceX-Mission/Controller/MissionDetails/MissionDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "updateBookmarkButtonAppearance()"
             landmarkType = "7">
             <Locations>
@@ -189,8 +189,8 @@
             filePath = "SpaceX-Mission/Controller/MissionDetails/MissionDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "updateBookmarkButtonAppearance()"
             landmarkType = "7">
             <Locations>
@@ -255,7 +255,7 @@
             startingLineNumber = "78"
             endingLineNumber = "78"
             landmarkName = "bookmarkButtonTapped()"
-            landmarkType = "9">
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "64F03DCB-6ACD-434F-99A2-10103DA91636 - d49200a88391a2a2"

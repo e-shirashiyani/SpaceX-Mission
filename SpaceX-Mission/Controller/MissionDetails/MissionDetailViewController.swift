@@ -93,7 +93,7 @@ class MissionDetailViewController: UIViewController {
     
     private func setupUI() {
         view.backgroundColor = .white
-        
+
         // Add subviews to the view
         view.addSubview(missionImageView)
         view.addSubview(descriptionLabel)
@@ -112,8 +112,6 @@ class MissionDetailViewController: UIViewController {
             descriptionLabel.topAnchor.constraint(equalTo: missionImageView.bottomAnchor, constant: 16),
             descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-//            descriptionLabel.heightAnchor.constraint(equalToConstant: 50),
-
             
             missionNameLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 16),
             missionNameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
@@ -146,10 +144,9 @@ class MissionDetailViewController: UIViewController {
     private func updateBookmarkButtonAppearance() {
        // Update the bookmark button appearance based on the bookmark status
         guard let mission = mission else { return }
-               let isBookmarked = MissionUserDefaultsManager.isMissionBookmarked(mission)
-
-               let bookmarkButtonImage = isBookmarked ? UIImage(systemName: "bookmark.fill") : UIImage(systemName: "bookmark")
-               bookmarkButton.setImage(bookmarkButtonImage, for: .normal)
+        let isBookmarked = MissionUserDefaultsManager.isMissionBookmarked(mission)
+        let bookmarkButtonImage = isBookmarked ? UIImage(systemName: "bookmark.fill") : UIImage(systemName: "bookmark")
+        bookmarkButton.setImage(bookmarkButtonImage, for: .normal)
     }
     
     private func loadLocalTime(utc: String) -> String {
