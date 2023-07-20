@@ -6,45 +6,132 @@
 //
 
 import UIKit
-import RxSwift
 import RxCocoa
+import UIKit
+
+// MissionListViewController.swift
+import UIKit
 
 class MissionListViewController: UIViewController {
+    private var missions: [Mission] = []
+    private var currentPage = 1
+    private let getMissionsUseCase: GetMissionsUseCase
+    private var isLoading = false
     
-    private let networkService = APIService()
-    private let disposeBag = DisposeBag()
-    internal var missions: [Mission] = []
-    
-    lazy var tableView: UITableView = {
+    private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.tableFooterView = UIView()
-        tableView.register(MissionCell.self, forCellReuseIdentifier: MissionCell.reuseIdentifier)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(MissionTableViewCell.self, forCellReuseIdentifier: "MissionCell")
         return tableView
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "Missions"
-        view.backgroundColor = .white
-        configureMissionTableView()
-    }
-    private func configureMissionTableView() {
-        view.addSubview(tableView)
-        tableView.dataSource = self
-        tableView.delegate = self
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-    }
-    private func showErrorAlert(with message: String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
+    private lazy var loadMoreButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Load More", for: .normal)
+        button.addTarget(self, action: #selector(loadMoreButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+            let activityIndicator = UIActivityIndicatorView(style: .gray)
+            activityIndicator.hidesWhenStopped = true
+            return activityIndicator
+        }()
+    init(getMissionsUseCase: GetMissionsUseCase) {
+        self.getMissionsUseCase = getMissionsUseCase
+        super.init(nibName: nil, bundle: nil)
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        setupUI()
+        fetchMissions()
+    }
+    
+    private func setupUI() {
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
+        
+        view.addSubview(loadMoreButton)
+        loadMoreButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            loadMoreButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loadMoreButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+        ])
+        view.addSubview(activityIndicator)
+                activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+                NSLayoutConstraint.activate([
+                    activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                    activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                ])
+    }
+    
+    private func fetchMissions() {
+            guard !isLoading else { return } // Prevent multiple requests
+            
+            isLoading = true
+            activityIndicator.startAnimating()
+            
+            getMissionsUseCase.execute(page: currentPage) { [weak self] result in
+                self?.isLoading = false
+                DispatchQueue.main.async {
+                    
+                    self?.activityIndicator.stopAnimating()
+                }
+                switch result {
+                case .success(let missions):
+                    if missions.isEmpty {
+                        // Handle the scenario where there is no more data
+                    } else {
+                        DispatchQueue.main.async {
+                            self?.missions.append(contentsOf: missions)
+                            self?.tableView.reloadData()
+                            self?.currentPage += 1 // Increment the page after loading data
+                        }
+                    }
+                case .failure(let error):
+                    // Handle the error
+                    print("Error fetching missions: \(error)")
+                }
+            }
+        }
+    
+    @objc private func loadMoreButtonTapped() {
+        currentPage += 1
+        tableView.reloadData()
+//        fetchMissions()
+    }
 }
 
+extension MissionListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Display only the missions for the current page
+        return currentPage * 20
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MissionCell", for: indexPath) as! MissionTableViewCell
+        // Calculate the index for the current page
+        if missions.count > 0 {
+            let index = (currentPage - 1) * 20 + indexPath.row
+            let mission = missions[index]
+            cell.configure(with: mission)
+        }
+        return cell
+    }
+}
+
+extension MissionListViewController: UITableViewDelegate {
+    // Implement the table view delegate methods, including the pagination logic, if required.
+}

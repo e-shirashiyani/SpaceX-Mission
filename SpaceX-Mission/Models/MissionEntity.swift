@@ -8,11 +8,13 @@
 import Foundation
 
 struct Mission: Decodable {
-    let name: String?
     let flight_number: Int?
-    let date_utc: String?
-//    let rocket: Rocket?
+    let name: String?
+//    let missionIconURL: String?
+    let success: Bool?
+    let details: String?
     let links: Links?
+    let date_utc: String?
     
 }
 struct Rocket: Decodable {
@@ -21,29 +23,20 @@ struct Rocket: Decodable {
 }
 
 struct Links: Decodable {
-    let missionPatchSmall: String?
-    let articleLink: String?
-    let videoLink: String?
+    let patch: Patch?
+    let webcast: String?
+    let youtubeID: String?
+    let article: String?
+    let wikipedia: String?
+    enum CodingKeys: String, CodingKey {
+        case patch, webcast
+        case youtubeID = "youtube_id"
+        case article, wikipedia
+    }
 }
-extension Mission {
-    
-    var formattedLaunchDate: String? {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-            dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-            
-            guard let launchDateStr = date_utc else {
-                return nil
-            }
-            
-            guard let launchDate = dateFormatter.date(from: launchDateStr) else {
-                return nil
-            }
-            
-            dateFormatter.dateFormat = "MMMM d, yyyy"
-            let formattedDate = dateFormatter.string(from: launchDate)
-            return formattedDate
-        }
-        
-    
+
+// MARK: - Patch
+struct Patch: Decodable {
+    let small, large: String?
 }
+

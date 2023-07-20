@@ -7,19 +7,29 @@
 
 import Foundation
 import RxSwift
-
-protocol MissionRepository {
-    func getMissions(pageNumber: Int) -> Observable<[Mission]>
-}
-
-class MissionRepositoryImpl: MissionRepository {
-    private let networkManager: NetworkManager
+class SpaceXMissionRepository: MissionRepository {
+    private let apiClient: SpaceXAPIClient
     
-    init(networkManager: NetworkManager) {
-        self.networkManager = networkManager
+    init(apiClient: SpaceXAPIClient) {
+        self.apiClient = apiClient
     }
     
-    func getMissions(pageNumber: Int) -> Observable<[Mission]> {
-        return networkManager.fetchMissions(pageNumber: pageNumber)
+    func getMissions(page: Int, completion: @escaping (Result<[Mission], Error>) -> Void) {
+        apiClient.fetchMissions(page: page, completion: completion)
     }
 }
+//protocol MissionRepository {
+//    func getMissions(pageNumber: Int) -> Observable<[Mission]>
+//}
+
+//class MissionRepositoryImpl: MissionRepository {
+//    private let networkManager: NetworkManager
+//
+//    init(networkManager: NetworkManager) {
+//        self.networkManager = networkManager
+//    }
+//
+//    func getMissions(pageNumber: Int) -> Observable<[Mission]> {
+//        return networkManager.fetchMissions(pageNumber: pageNumber)
+//    }
+//}
