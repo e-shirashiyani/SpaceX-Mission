@@ -1,6 +1,6 @@
 # SpaceX Missions Showcase App
 
-![App Icon](https://github.com/SpaceX-Mission/Assets.xcassets/AppIcon.appiconset/1024.png)
+![App Icon](SpaceX-Mission/Assets.xcassets/AppIcon.appiconset/1024.png)
 
 ## Overview
 
